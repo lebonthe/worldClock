@@ -9,6 +9,18 @@ import UIKit
 
 class ClockTableViewController: UITableViewController {
 
+    let citys = [
+        TimeZoneInfo(timeZone: seperateCity(TimeZone: citysInput[0]), time: getCurrentTime(city:citysInput[0]), isToday: isWhichDay(city: citysInput[0]), jetLag: getDaysDiff(city: citysInput[0])),
+        TimeZoneInfo(timeZone: seperateCity(TimeZone: citysInput[1]), time: getCurrentTime(city:citysInput[1]), isToday: isWhichDay(city: citysInput[1]), jetLag: getDaysDiff(city: citysInput[1])),
+        TimeZoneInfo(timeZone: seperateCity(TimeZone: citysInput[2]), time: getCurrentTime(city:citysInput[2]), isToday: isWhichDay(city: citysInput[2]), jetLag: getDaysDiff(city: citysInput[2])),
+        TimeZoneInfo(timeZone: seperateCity(TimeZone: citysInput[3]), time: getCurrentTime(city:citysInput[3]), isToday: isWhichDay(city: citysInput[3]), jetLag: getDaysDiff(city: citysInput[3])),
+        TimeZoneInfo(timeZone: seperateCity(TimeZone: citysInput[4]), time: getCurrentTime(city:citysInput[4]), isToday: isWhichDay(city: citysInput[4]), jetLag: getDaysDiff(city: citysInput[4])),
+        TimeZoneInfo(timeZone: seperateCity(TimeZone: citysInput[5]), time: getCurrentTime(city:citysInput[5]), isToday: isWhichDay(city: citysInput[5]), jetLag: getDaysDiff(city: citysInput[5])),
+        TimeZoneInfo(timeZone: seperateCity(TimeZone: citysInput[6]), time: getCurrentTime(city:citysInput[6]), isToday: isWhichDay(city: citysInput[6]), jetLag: getDaysDiff(city: citysInput[6])),
+        TimeZoneInfo(timeZone: seperateCity(TimeZone: citysInput[7]), time: getCurrentTime(city:citysInput[7]), isToday: isWhichDay(city: citysInput[7]), jetLag: getDaysDiff(city: citysInput[7]))
+    ]
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -19,6 +31,8 @@ class ClockTableViewController: UITableViewController {
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
     }
 
+
+   
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
@@ -28,18 +42,34 @@ class ClockTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 0
+        return citys.count
     }
 
-    /*
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
+        // 從表格視圖隊列中重用一個 cell，使用 RegionTableViewCell 的標識符。
+        let cell = tableView.dequeueReusableCell(withIdentifier: "\(RegionTableViewCell.self)", for: indexPath) as! RegionTableViewCell
 
-        // Configure the cell...
+        // 根據當前行的索引從 citys 的 array 中獲取一個城市實例
+        let city = citys[indexPath.row]
 
+        // 將時區放入 cityLabel
+        cell.cityLabel.text = city.timeZone
+
+        // 設定 timeLabel 的自定義字體格式，因為從 customLabelFount 函數返回一個 NSAttributedString 型別的文字
+        cell.timeLabel.attributedText = customLabelFount(text: city.time)
+
+        // 設置 cell 中表示是否為今天的 isTodayLabel.text
+        cell.isTodayLabel.text = city.isToday
+
+        // 將時差放到 isTodayLabel.text 之後
+        cell.isTodayLabel.text?.append(city.jetLag)
+
+        // 返回配置好的 cell
         return cell
     }
-    */
+
+    
 
     /*
     // Override to support conditional editing of the table view.

@@ -9,21 +9,27 @@
 /* Begin PBXBuildFile section */
 		9F65ACEC2B2B5E74002D8E46 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F65ACEB2B2B5E74002D8E46 /* AppDelegate.swift */; };
 		9F65ACEE2B2B5E74002D8E46 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F65ACED2B2B5E74002D8E46 /* SceneDelegate.swift */; };
-		9F65ACF02B2B5E74002D8E46 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F65ACEF2B2B5E74002D8E46 /* ViewController.swift */; };
 		9F65ACF32B2B5E74002D8E46 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9F65ACF12B2B5E74002D8E46 /* Main.storyboard */; };
 		9F65ACF52B2B5E76002D8E46 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9F65ACF42B2B5E76002D8E46 /* Assets.xcassets */; };
 		9F65ACF82B2B5E76002D8E46 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9F65ACF62B2B5E76002D8E46 /* LaunchScreen.storyboard */; };
+		9F65AD022B2B5FC8002D8E46 /* ClockTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F65AD012B2B5FC8002D8E46 /* ClockTableViewController.swift */; };
+		9F65AD062B2B6001002D8E46 /* RegionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F65AD052B2B6001002D8E46 /* RegionTableViewCell.swift */; };
+		9F65AD2D2B2B6EE9002D8E46 /* TimeZones.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F65AD2C2B2B6EE9002D8E46 /* TimeZones.swift */; };
+		9F766CC72B2C426C00F56D96 /* TimeZone.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F766CC62B2C426C00F56D96 /* TimeZone.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		9F65ACE82B2B5E74002D8E46 /* worldClock.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = worldClock.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9F65ACEB2B2B5E74002D8E46 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9F65ACED2B2B5E74002D8E46 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		9F65ACEF2B2B5E74002D8E46 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		9F65ACF22B2B5E74002D8E46 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		9F65ACF42B2B5E76002D8E46 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9F65ACF72B2B5E76002D8E46 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9F65ACF92B2B5E76002D8E46 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9F65AD012B2B5FC8002D8E46 /* ClockTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClockTableViewController.swift; sourceTree = "<group>"; };
+		9F65AD052B2B6001002D8E46 /* RegionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegionTableViewCell.swift; sourceTree = "<group>"; };
+		9F65AD2C2B2B6EE9002D8E46 /* TimeZones.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeZones.swift; sourceTree = "<group>"; };
+		9F766CC62B2C426C00F56D96 /* TimeZone.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeZone.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,13 +64,40 @@
 			children = (
 				9F65ACEB2B2B5E74002D8E46 /* AppDelegate.swift */,
 				9F65ACED2B2B5E74002D8E46 /* SceneDelegate.swift */,
-				9F65ACEF2B2B5E74002D8E46 /* ViewController.swift */,
-				9F65ACF12B2B5E74002D8E46 /* Main.storyboard */,
+				9F65AD0A2B2B604A002D8E46 /* Visual */,
+				9F65AD092B2B6041002D8E46 /* Model */,
+				9F65AD0B2B2B6056002D8E46 /* Controller */,
 				9F65ACF42B2B5E76002D8E46 /* Assets.xcassets */,
 				9F65ACF62B2B5E76002D8E46 /* LaunchScreen.storyboard */,
 				9F65ACF92B2B5E76002D8E46 /* Info.plist */,
 			);
 			path = worldClock;
+			sourceTree = "<group>";
+		};
+		9F65AD092B2B6041002D8E46 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				9F65AD2C2B2B6EE9002D8E46 /* TimeZones.swift */,
+				9F766CC62B2C426C00F56D96 /* TimeZone.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		9F65AD0A2B2B604A002D8E46 /* Visual */ = {
+			isa = PBXGroup;
+			children = (
+				9F65ACF12B2B5E74002D8E46 /* Main.storyboard */,
+			);
+			path = Visual;
+			sourceTree = "<group>";
+		};
+		9F65AD0B2B2B6056002D8E46 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				9F65AD012B2B5FC8002D8E46 /* ClockTableViewController.swift */,
+				9F65AD052B2B6001002D8E46 /* RegionTableViewCell.swift */,
+			);
+			path = Controller;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -138,9 +171,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9F65ACF02B2B5E74002D8E46 /* ViewController.swift in Sources */,
+				9F766CC72B2C426C00F56D96 /* TimeZone.swift in Sources */,
 				9F65ACEC2B2B5E74002D8E46 /* AppDelegate.swift in Sources */,
+				9F65AD022B2B5FC8002D8E46 /* ClockTableViewController.swift in Sources */,
+				9F65AD2D2B2B6EE9002D8E46 /* TimeZones.swift in Sources */,
 				9F65ACEE2B2B5E74002D8E46 /* SceneDelegate.swift in Sources */,
+				9F65AD062B2B6001002D8E46 /* RegionTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
