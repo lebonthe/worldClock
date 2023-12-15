@@ -48,7 +48,8 @@ class ClockTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         // 從表格視圖隊列中重用一個 cell，使用 RegionTableViewCell 的標識符。
-        let cell = tableView.dequeueReusableCell(withIdentifier: "\(RegionTableViewCell.self)", for: indexPath) as! RegionTableViewCell
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "\(RegionTableViewCell.self)", for: indexPath) as? RegionTableViewCell else { fatalError("dequeueReusableCell RegionTableViewCell failed") }
+        
 
         // 根據當前行的索引從 citys 的 array 中獲取一個城市實例
         let city = citys[indexPath.row]
